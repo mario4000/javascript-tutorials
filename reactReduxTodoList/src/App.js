@@ -1,19 +1,27 @@
 /**
 * Update Type:
 * ============
-* create global state within index.js;
-* render ui with global state
+* create new components
 */
 
-import React, { Component } from 'react';
+
+/* styles */
 import logo from './logo.svg';
 import './App.css';
 
+/* libs */
+import React, { Component } from 'react';
+
+
+/* components */
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
+
+/* class */
 class App extends Component {
 
-
   render() {
-    const { todos } = this.props;
+    const {todos} = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -26,23 +34,8 @@ class App extends Component {
         </header>
 
         <div className="Todo-App">
-
-            <form>
-              <input type="text" />
-            </form>
-
-            <div className="Todo-List">
-                <ul>
-                  { todos.map( todo => (
-                    <li key={ todo.id }>
-                      <input type="checkbox"
-                             defaultChecked={ todo.isComplete }/>
-                      { todo.name }
-                    </li>
-                  ))}
-                </ul>
-            </div>
-
+            <TodoForm />
+            <TodoList todos={todos} />
         </div>
 
       </div>
