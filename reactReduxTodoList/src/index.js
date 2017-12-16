@@ -16,11 +16,18 @@ import App from './App';
 import store from './store';
 
 
+
+const todoChangeHandler = (val) => store.dispatch({
+                            type:"CURRENT_UPDATE",
+                            payload: val
+                          });
 /* mount */
 const render = () => {
   const state = store.getState();
   ReactDOM.render(
-    <App {...state}/>,
+    <App todos={state.todos}
+         currentTodo={state.currentTodo}
+         changeCurrent={todoChangeHandler}/>,
     document.getElementById('root')
   );
 }
@@ -29,14 +36,6 @@ render();
 
 
 store.subscribe(render);
-
-
-setTimeout(() => {
-  store.dispatch({
-    type: "TODO_ADD",
-    payload: {id: 4, name: "Dispatching new item with redux", isComplete: true}
-  });
-}, 3000);
 
 
 

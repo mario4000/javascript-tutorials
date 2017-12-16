@@ -1,7 +1,8 @@
 /**
 * Update Type:
 * ============
-*  state changes with redux subscribe
+*  sync ui and state with redux
+*  using controlled components.
 */
 
 
@@ -21,7 +22,7 @@ import TodoList from './components/TodoList';
 class App extends Component {
 
   render() {
-    const {todos} = this.props;
+    const {todos, currentTodo, changeCurrent} = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -34,7 +35,8 @@ class App extends Component {
         </header>
 
         <div className="Todo-App">
-            <TodoForm />
+            <TodoForm currentTodo={currentTodo}
+                      changeCurrent={changeCurrent}/>
             <TodoList todos={todos} />
         </div>
 

@@ -1,9 +1,17 @@
 import React from 'react';
 
-export default (props) => (
+export default (props) => {
+  const {currentTodo, changeCurrent} = props;
+  const handleInputChange = (evt) => {
+      const val = evt.target.value;
+      changeCurrent(val);
+  };
 
-  <form>
-    <input type="text" />
-  </form>
-
-)
+  return (
+    <form>
+      <input type="text"
+             onChange={handleInputChange}
+             value={currentTodo}/>
+    </form>
+  )
+}
