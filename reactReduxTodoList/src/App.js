@@ -1,7 +1,7 @@
 /**
 * Update Type:
 * ============
-*  adding redux store for initial state
+*  state changes with redux subscribe
 */
 
 

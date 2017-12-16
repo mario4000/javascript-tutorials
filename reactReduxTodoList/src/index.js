@@ -14,15 +14,29 @@ import App from './App';
 
 //redux
 import store from './store';
-const state = store.getState();
 
 
 /* mount */
-ReactDOM.render(
-  <App {...state}/>,
-  document.getElementById('root')
-);
+const render = () => {
+  const state = store.getState();
+  ReactDOM.render(
+    <App {...state}/>,
+    document.getElementById('root')
+  );
+}
 
+render();
+
+
+store.subscribe(render);
+
+
+setTimeout(() => {
+  store.dispatch({
+    type: "TODO_ADD",
+    payload: {id: 4, name: "Dispatching new item with redux", isComplete: true}
+  });
+}, 3000);
 
 
 
