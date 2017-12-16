@@ -17,8 +17,7 @@ export default (state = initialState, action) => {
 
   switch(action.type){
     case TODO_ADD:
-      return {
-              ...state,
+      return {...state,
               todos: state.todos.concat(action.payload)
              }
 

@@ -1,7 +1,7 @@
 /**
 * Update Type:
 * ============
-*  first unit test
+*  adding redux store for initial state
 */
 
 
