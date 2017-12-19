@@ -1,8 +1,8 @@
 /**
 * Update Type:
 * ============
-*  manage action creators with
-*  bindActionCreators
+*  manage state with react-redux
+*  connect.
 */
 
 
@@ -12,7 +12,7 @@ import './App.css';
 
 /* libs */
 import React, { Component } from 'react';
-
+import {connect} from 'react-redux';
 
 /* components */
 import TodoForm from './components/TodoForm';
@@ -45,4 +45,14 @@ class App extends Component {
   }
 }
 
-export default App;
+// connected component;
+// wires props to redux store
+const mapStateToProps = (state) => state;
+export default connect(mapStateToProps)(App);
+
+
+
+
+
+
+//export default App;
