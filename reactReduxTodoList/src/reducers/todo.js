@@ -3,6 +3,8 @@ import {
   TODO_ADD
 } from "./constants"
 
+
+/* data */
 const initialState = {
   todos: [
     {id: 1, name: "Create Static UI", isComplete: true},
@@ -12,7 +14,13 @@ const initialState = {
   currentTodo: ""
 }
 
-//redux state
+/* action creator */
+export const updateCurrent = (val) => ({
+                                type:CURRENT_UPDATE,
+                                payload: val
+                              });
+
+/* redux state */
 export default (state = initialState, action) => {
 
   switch(action.type){

@@ -1,8 +1,7 @@
 /**
 * Update Type:
 * ============
-*  sync ui and state with redux
-*  using controlled components.
+*  dispatch actions with action creator
 */
 
 
