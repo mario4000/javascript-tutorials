@@ -1,8 +1,7 @@
 /**
 * Update Type:
 * ============
-*  manage state with react-redux
-*  connect.
+*  connect mapDispatchToProps
 */
 
 
@@ -13,16 +12,21 @@ import './App.css';
 /* libs */
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 /* components */
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
+/* action creators */
+import {updateCurrent} from './reducers/todo';
+
+
 /* class */
 class App extends Component {
 
   render() {
-    const {todos, currentTodo, changeCurrent} = this.props;
+    const {todos, currentTodo, updateCurrent} = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -36,7 +40,7 @@ class App extends Component {
 
         <div className="Todo-App">
             <TodoForm currentTodo={currentTodo}
-                      changeCurrent={changeCurrent}/>
+                      changeCurrent={updateCurrent}/>
             <TodoList todos={todos} />
         </div>
 
@@ -46,9 +50,17 @@ class App extends Component {
 }
 
 // connected component;
-// wires props to redux store
+// wires props data and dispatch functions
+// to reducer
 const mapStateToProps = (state) => state;
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  updateCurrent
+}, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
 
 
 
