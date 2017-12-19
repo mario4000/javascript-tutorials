@@ -1,7 +1,8 @@
 /**
 * Update Type:
 * ============
-*  dispatch actions with action creator
+*  manage action creators with
+*  bindActionCreators
 */
 
 
