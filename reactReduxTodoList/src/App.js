@@ -1,7 +1,7 @@
 /**
 * Update Type:
 * ============
-*  connect mapDispatchToProps
+*  mapDispatchToProps shorthand refactor
 */
 
 
@@ -12,7 +12,6 @@ import './App.css';
 /* libs */
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 
 /* components */
 import TodoForm from './components/TodoForm';
@@ -50,16 +49,12 @@ class App extends Component {
 }
 
 // connected component;
-// wires props data and dispatch functions
-// to reducer
-const mapStateToProps = (state) => state;
-const mapDispatchToProps = (dispatch) => bindActionCreators({
-  updateCurrent
-}, dispatch);
-
+// connect function shorthand
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  /* mapStateToProps */
+  (state) => state,
+  /* mapDispatchToProps */
+  {updateCurrent}
 )(App);
 
 
