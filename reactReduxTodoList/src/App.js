@@ -1,7 +1,8 @@
 /**
 * Update Type:
 * ============
-*  mapDispatchToProps shorthand refactor
+* using connect for efficient
+* state management in components
 */
 
 
@@ -11,21 +12,15 @@ import './App.css';
 
 /* libs */
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
 
 /* components */
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
-/* action creators */
-import {updateCurrent} from './reducers/todo';
-
-
 /* class */
 class App extends Component {
 
   render() {
-    const {todos, currentTodo, updateCurrent} = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -38,9 +33,8 @@ class App extends Component {
         </header>
 
         <div className="Todo-App">
-            <TodoForm currentTodo={currentTodo}
-                      changeCurrent={updateCurrent}/>
-            <TodoList todos={todos} />
+            <TodoForm />
+            <TodoList />
         </div>
 
       </div>
@@ -48,18 +42,4 @@ class App extends Component {
   }
 }
 
-// connected component;
-// connect function shorthand
-export default connect(
-  /* mapStateToProps */
-  (state) => state,
-  /* mapDispatchToProps */
-  {updateCurrent}
-)(App);
-
-
-
-
-
-
-//export default App;
+export default App;

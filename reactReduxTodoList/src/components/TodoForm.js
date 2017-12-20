@@ -1,12 +1,19 @@
+/* libs */
 import React from 'react';
+import {connect} from 'react-redux';
 
-export default (props) => {
-  const {currentTodo, changeCurrent} = props;
+/* action creators */
+import {updateCurrent} from './../reducers/todo';
+
+/* components */
+const TodoForm = (props) => {
+  const {currentTodo, updateCurrent} = props;
   const handleInputChange = (evt) => {
       const val = evt.target.value;
-      changeCurrent(val);
+      updateCurrent(val);
   };
 
+  console.log("rendering todo form....");
   return (
     <form>
       <input type="text"
@@ -15,3 +22,10 @@ export default (props) => {
     </form>
   )
 }
+
+export default connect(
+  /* mapStateToProps: return currentTodo  */
+  (state) => ({currentTodo: state.currentTodo}),
+  /* mapDispatchToProps */
+  {updateCurrent}
+)(TodoForm);
