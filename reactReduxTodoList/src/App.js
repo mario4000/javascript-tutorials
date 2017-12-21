@@ -1,8 +1,7 @@
 /**
 * Update Type:
 * ============
-* using connect for efficient
-* state management in components
+* adding json server
 */
 
 
