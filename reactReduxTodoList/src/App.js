@@ -1,7 +1,7 @@
 /**
 * Update Type:
 * ============
-* save new todo on json-server
+* connect redux-devtools-extension
 */
 
 
