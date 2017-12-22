@@ -1,9 +1,50 @@
 {
   "todos": [
-    {"id": 1, "name": "Create Static UI", "isComplete": true},
-    {"id": 2, "name": "Create Initial State", "isComplete": true},
-    {"id": 3, "name": "Use State to Render UI","isComplete": true},
-    {"id": 4, "name": "Add json-server for data persistence","isComplete": true},
-    {"id": 5, "name": "Redux thunk for async json-server data","isComplete": true}
+    {
+      "id": 1,
+      "name": "Create Static UI",
+      "isComplete": true
+    },
+    {
+      "id": 2,
+      "name": "Create Initial State",
+      "isComplete": true
+    },
+    {
+      "id": 3,
+      "name": "Use State to Render UI",
+      "isComplete": true
+    },
+    {
+      "id": 4,
+      "name": "Add json-server for data persistence",
+      "isComplete": true
+    },
+    {
+      "id": 5,
+      "name": "Redux thunk for async json-server data",
+      "isComplete": true
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "name": "qwerqwerqwer",
+      "isComplete": false,
+      "id": 8
+    },
+    {
+      "name": "that was cool",
+      "isComplete": false,
+      "id": 9
+    },
+    {
+      "name": "the server restarted quickly",
+      "isComplete": false,
+      "id": 10
+    }
   ]
 }

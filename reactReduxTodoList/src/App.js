@@ -1,8 +1,7 @@
 /**
 * Update Type:
 * ============
-* dispatch async actions with
-* redux thunk middleware
+* save new todo on json-server
 */
 
 

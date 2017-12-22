@@ -6,7 +6,7 @@ import {
 
 
 /* data */
-import {getTodos} from './../lib/todoServices';
+import { getTodos, createTodo } from './../lib/todoServices';
 const initialState = {
   todos: [],
   currentTodo: ""
@@ -14,10 +14,11 @@ const initialState = {
 
 /* action creator : sync */
 export const loadTodos = (todos) => ({type:TODO_LOAD, payload: todos});
+export const addTodo = (todo) => ({type:TODO_ADD, payload: todo});
 export const updateCurrent = (val) => ({type:CURRENT_UPDATE, payload: val});
 
 
-// async [ return a thunk function]
+/* action creator: async [ return a thunk function] */
 export const fetchTodos = () => {
   return (dispatch) => {
     getTodos()
@@ -25,7 +26,12 @@ export const fetchTodos = () => {
   }
 }
 
-
+export const saveTodo = (name) => {
+  return (dispatch) => {
+    createTodo(name)
+      .then(res => dispatch(addTodo(res)));
+  }
+}
 
 /* redux state */
 export default (state = initialState, action) => {
@@ -39,6 +45,7 @@ export default (state = initialState, action) => {
 
     case TODO_ADD:
       return {...state,
+              currentTodo: '',
               todos: state.todos.concat(action.payload)
             };
 
