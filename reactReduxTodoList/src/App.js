@@ -1,7 +1,8 @@
 /**
 * Update Type:
 * ============
-* adding json server
+* dispatch async actions with
+* redux thunk middleware
 */
 
 

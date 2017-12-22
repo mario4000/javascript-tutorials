@@ -1,29 +1,41 @@
 import {
   CURRENT_UPDATE,
-  TODO_ADD
+  TODO_ADD,
+  TODO_LOAD
 } from "./constants"
 
 
 /* data */
+import {getTodos} from './../lib/todoServices';
 const initialState = {
-  todos: [
-    {id: 1, name: "Create Static UI", isComplete: true},
-    {id: 2, name: "Create Initial State", isComplete: true},
-    {id: 3, name: "Use State to Render UI", isComplete: true}
-  ],
+  todos: [],
   currentTodo: ""
 }
 
-/* action creator */
-export const updateCurrent = (val) => ({
-                                type:CURRENT_UPDATE,
-                                payload: val
-                              });
+/* action creator : sync */
+export const loadTodos = (todos) => ({type:TODO_LOAD, payload: todos});
+export const updateCurrent = (val) => ({type:CURRENT_UPDATE, payload: val});
+
+
+// async [ return a thunk function]
+export const fetchTodos = () => {
+  return (dispatch) => {
+    getTodos()
+      .then(todos => dispatch(loadTodos(todos)));
+  }
+}
+
+
 
 /* redux state */
 export default (state = initialState, action) => {
 
   switch(action.type){
+
+    case TODO_LOAD:
+      return {...state,
+              todos: action.payload
+            };
 
     case TODO_ADD:
       return {...state,
