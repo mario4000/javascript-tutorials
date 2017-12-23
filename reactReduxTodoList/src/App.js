@@ -15,6 +15,7 @@ import React, { Component } from 'react';
 /* components */
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import Message from './components/Message';
 
 /* class */
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
         </header>
 
         <div className="Todo-App">
+            <Message message="test notification"/>
             <TodoForm />
             <TodoList />
         </div>

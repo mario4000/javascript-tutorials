@@ -31,7 +31,9 @@ class TodoForm extends Component {
         <input type="text"
                onChange={this.handleInputChange}
                value={currentTodo}/>
-        <input type="submit" />
+        <button type="submit" name="saveTodo">
+          Save
+        </button>
       </form>
     )
   }
