@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 /* action creators */
 import {fetchTodos, toggleTodo,
-        destroyTodo} from './../reducers/todo';
+        destroyTodo, getVisibleTodos} from './../reducers/todo';
 
 /* components */
 const TodoItem = ({id, isComplete, name, toggleTodo, destroyTodo}) => (
@@ -50,8 +50,8 @@ class TodoList extends Component {
 }
 
 export default connect(
-  /* mapStateToProps: return todos  */
-  (state) => ({todos: state.todo.todos}),
+  /* mapStateToProps: return filtered todos  */
+  (state, ownProps) => ({todos: getVisibleTodos(state.todo.todos, ownProps.filter)}),
   /* mapDispatchToProps */
   {fetchTodos, toggleTodo, destroyTodo}
 )(TodoList);
