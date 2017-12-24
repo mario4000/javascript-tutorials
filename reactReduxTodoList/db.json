@@ -54,6 +54,11 @@
       "name": "another todo to test",
       "isComplete": false,
       "id": 13
+    },
+    {
+      "name": "responding to action in multiple reducers ",
+      "isComplete": false,
+      "id": 14
     }
   ]
 }

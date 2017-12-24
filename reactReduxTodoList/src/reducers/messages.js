@@ -1,5 +1,7 @@
 import {
-  MESSAGE_SHOW
+  MESSAGE_SHOW,
+  TODO_ADD,
+  TODO_LOAD
 } from "./constants";
 
 /* action creators */
@@ -9,6 +11,9 @@ export default function(state="", action){
   switch(action.type){
     case MESSAGE_SHOW:
       return action.payload;
+    case TODO_ADD:
+    case TODO_LOAD:
+        return '';
     default:
       return state;
   }

@@ -22,6 +22,7 @@ export const updateCurrent = (val) => ({type:CURRENT_UPDATE, payload: val});
 /* action creator: async [ return a thunk function] */
 export const fetchTodos = () => {
   return (dispatch) => {
+    dispatch(showMessage('Loading todos...'));    
     getTodos()
       .then(todos => dispatch(loadTodos(todos)));
   }
@@ -33,7 +34,6 @@ export const saveTodo = (name) => {
     createTodo(name)
       .then(res => {
         dispatch(addTodo(res));
-        dispatch(showMessage(''));
       });
   }
 }

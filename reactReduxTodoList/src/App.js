@@ -1,8 +1,8 @@
 /**
 * Update Type:
 * ============
-* multiple reducers with
-* combineReducers
+* responding to single redux action
+* in multiple reducers
 */
 
 
