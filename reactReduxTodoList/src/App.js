@@ -1,8 +1,8 @@
 /**
 * Update Type:
 * ============
-* responding to single redux action
-* in multiple reducers
+* update existing todo item
+* state with fetch and thunk
 */
 
 

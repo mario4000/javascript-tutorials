@@ -37,7 +37,7 @@
     },
     {
       "name": "the server restarted quickly",
-      "isComplete": false,
+      "isComplete": true,
       "id": 10
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "name": "this is a new thing to add",
-      "isComplete": false,
+      "isComplete": true,
       "id": 12
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "name": "responding to action in multiple reducers ",
-      "isComplete": false,
+      "isComplete": true,
       "id": 14
     }
   ]
