@@ -40,7 +40,7 @@ class TodoList extends Component {
 
 export default connect(
   /* mapStateToProps: return todos  */
-  (state) => ({todos: state.todos}),
+  (state) => ({todos: state.todo.todos}),
   /* mapDispatchToProps */
   {fetchTodos}
 )(TodoList);

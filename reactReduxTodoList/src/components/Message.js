@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 const Message = ({message}) => (
   message
@@ -7,4 +8,8 @@ const Message = ({message}) => (
 );
 
 
-export default Message;
+export default connect(
+  /* mapStateToProps: return message  */
+  (state) => ({message: state.message})
+  /* mapDispatchToProps */
+)(Message);

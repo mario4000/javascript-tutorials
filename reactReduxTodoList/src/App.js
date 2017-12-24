@@ -1,7 +1,8 @@
 /**
 * Update Type:
 * ============
-* connect redux-devtools-extension
+* multiple reducers with
+* combineReducers
 */
 
 
@@ -33,7 +34,7 @@ class App extends Component {
         </header>
 
         <div className="Todo-App">
-            <Message message="test notification"/>
+            <Message />
             <TodoForm />
             <TodoList />
         </div>

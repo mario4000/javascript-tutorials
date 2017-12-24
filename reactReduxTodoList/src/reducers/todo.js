@@ -2,11 +2,12 @@ import {
   CURRENT_UPDATE,
   TODO_ADD,
   TODO_LOAD
-} from "./constants"
+} from "./constants";
 
 
 /* data */
 import { getTodos, createTodo } from './../lib/todoServices';
+import { showMessage } from './messages';
 const initialState = {
   todos: [],
   currentTodo: ""
@@ -28,8 +29,12 @@ export const fetchTodos = () => {
 
 export const saveTodo = (name) => {
   return (dispatch) => {
+    dispatch(showMessage('Saving todo.'));
     createTodo(name)
-      .then(res => dispatch(addTodo(res)));
+      .then(res => {
+        dispatch(addTodo(res));
+        dispatch(showMessage(''));
+      });
   }
 }
 
