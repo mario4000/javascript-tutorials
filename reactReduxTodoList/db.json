@@ -34,6 +34,21 @@
       "name": "this is my final test for the json-server",
       "isComplete": false,
       "id": 13
+    },
+    {
+      "name": "this is a new test for the filter",
+      "isComplete": false,
+      "id": 14
+    },
+    {
+      "name": "and another that should be detected by filtering",
+      "isComplete": false,
+      "id": 15
+    },
+    {
+      "name": "and the last filtered result",
+      "isComplete": false,
+      "id": 16
     }
   ]
 }

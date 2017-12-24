@@ -3,7 +3,9 @@ import {
   TODO_ADD,
   TODO_LOAD,
   TODO_REPLACE,
-  TODO_DELETE
+  TODO_DELETE,
+  FILTER_ACTIVE,
+  FILTER_COMPLETED
 } from "./constants";
 
 
@@ -114,10 +116,10 @@ export default (state = initialState, action) => {
 export const getVisibleTodos = (todos, filter) => {
   switch(filter){
 
-    case "active":
+    case FILTER_ACTIVE:
       return todos.filter(t => !t.isComplete);
 
-    case "completed":
+    case FILTER_COMPLETED:
       return todos.filter(t => t.isComplete);
 
     default:
