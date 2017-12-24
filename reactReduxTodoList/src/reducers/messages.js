@@ -2,7 +2,8 @@ import {
   MESSAGE_SHOW,
   TODO_LOAD,
   TODO_ADD,
-  TODO_REPLACE
+  TODO_REPLACE,
+  TODO_DELETE
 } from "./constants";
 
 /* action creators */
@@ -17,6 +18,7 @@ export default function(state="", action){
     case TODO_LOAD:
     case TODO_ADD:
     case TODO_REPLACE:
+    case TODO_DELETE:
         return '';
 
     default:

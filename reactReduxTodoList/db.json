@@ -26,39 +26,14 @@
       "isComplete": true
     },
     {
-      "name": "qwerqwerqwer",
-      "isComplete": false,
-      "id": 8
-    },
-    {
-      "name": "that was cool",
-      "isComplete": false,
-      "id": 9
-    },
-    {
-      "name": "the server restarted quickly",
-      "isComplete": true,
-      "id": 10
-    },
-    {
-      "name": "this is another test save",
-      "isComplete": false,
-      "id": 11
-    },
-    {
       "name": "this is a new thing to add",
       "isComplete": true,
       "id": 12
     },
     {
-      "name": "another todo to test",
+      "name": "this is my final test for the json-server",
       "isComplete": false,
       "id": 13
-    },
-    {
-      "name": "responding to action in multiple reducers ",
-      "isComplete": true,
-      "id": 14
     }
   ]
 }

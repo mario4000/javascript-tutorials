@@ -2,13 +2,14 @@ import {
   CURRENT_UPDATE,
   TODO_ADD,
   TODO_LOAD,
-  TODO_REPLACE
+  TODO_REPLACE,
+  TODO_DELETE
 } from "./constants";
 
 
 /* data */
 import { getTodos, createTodo,
-         updateTodo } from './../lib/todoServices';
+         updateTodo, deleteTodo } from './../lib/todoServices';
 import { showMessage } from './messages';
 const initialState = {
   todos: [],
@@ -19,6 +20,7 @@ const initialState = {
 export const loadTodos = (todos) => ({type:TODO_LOAD, payload: todos});
 export const addTodo = (todo) => ({type:TODO_ADD, payload: todo});
 export const replaceTodo = (todo) => ({type:TODO_REPLACE, payload: todo});
+export const removeTodo = (id) => ({type:TODO_DELETE, payload: id});
 export const updateCurrent = (val) => ({type:CURRENT_UPDATE, payload: val});
 
 
@@ -58,6 +60,15 @@ export const toggleTodo = (id) => {
   }
 }
 
+export const destroyTodo = (id) => {
+  return (dispatch, getState) => {
+    dispatch(showMessage('Removing todo'));
+    deleteTodo(id)
+      .then(res => {
+        dispatch(removeTodo(id));
+      });
+  }
+}
 
 /* redux state */
 export default (state = initialState, action) => {
@@ -82,7 +93,13 @@ export default (state = initialState, action) => {
                 ? action.payload
                 : t)
              };
-             
+
+    case TODO_DELETE:
+      return {...state,
+              todos: state.todos.filter(t =>
+                  t.id !== action.payload)
+             };
+
     case CURRENT_UPDATE:
       return {...state, currentTodo: action.payload};
 

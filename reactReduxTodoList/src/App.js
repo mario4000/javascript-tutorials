@@ -1,8 +1,8 @@
 /**
 * Update Type:
 * ============
-* update existing todo item
-* state with fetch and thunk
+* remove todo todo item
+*
 */
 
 

@@ -57,3 +57,17 @@ export const updateTodo = (todo) => {
   )
   .then( resp => resp.json());
 }
+
+/*
+* delete todo
+*/
+export const deleteTodo = (id) => {
+  const { todosUrl } = endpoints;
+  return fetch(
+    `${todosUrl}${id}`,
+    {
+      method: 'DELETE',
+      headers: postHeaders
+    }
+  );
+}
