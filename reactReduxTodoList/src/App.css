@@ -60,3 +60,13 @@ li {
   margin-left: -100px;
   top: 200px;
 }
+
+.footer ul li {
+  display: inline-block;
+  margin: 0 5px;
+
+}
+
+.footer ul li:before {
+  content: '> ';
+}

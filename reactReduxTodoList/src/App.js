@@ -12,11 +12,13 @@ import './App.css';
 
 /* libs */
 import React, { Component } from 'react';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 /* components */
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import Message from './components/Message';
+import Footer from './components/Footer';
 
 /* class */
 class App extends Component {
@@ -33,12 +35,14 @@ class App extends Component {
           </h1>
         </header>
 
-        <div className="Todo-App">
+        <Router>
+          <div className="Todo-App">
             <Message />
             <TodoForm />
             <TodoList />
-        </div>
-
+            <Footer />
+          </div>
+        </Router>
       </div>
     );
   }
