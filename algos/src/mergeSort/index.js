@@ -18,7 +18,7 @@
 /**
 * dependencies
 */
-const arrayGenerator = require('./../../_helpers/arrayGeneratorClass');
+const arrayGenerator = require('./../_helpers/arrayGeneratorClass');
 const mergeSort = require('./mergeSort')
 
 /**
@@ -305,6 +305,3 @@ O(nlogn)
 
 
 */
-
-
-

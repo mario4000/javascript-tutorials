@@ -33,7 +33,7 @@
 /**
 * dependencies
 */
-const arrayGenerator = require('./../../_helpers/arrayGeneratorClass');
+const arrayGenerator = require('./../_helpers/arrayGeneratorClass');
 const bubbleSort = require('./bubbleSort');
 const earlyTerminationBubbleSort = require('./earlyTerminationBubbleSort');
 
@@ -242,6 +242,3 @@ are swapped again, leading to the final order:
 
 
 */
-
-
-
