@@ -1,3 +1,12 @@
+/*
+var sequence = [
+								"BODY_STYLE_CONFIG_ID",
+								"WHEEL_BASE_ID",
+								"DRIVE_TYPE_ID",
+								"SUBMODEL_ID"
+								];
+*/
+
 window.SeedData = (function () {
   return {
     "records":[

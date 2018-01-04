@@ -1,11 +1,27 @@
-class ParentComponent extends React.Component {
+/**
+*******************************************
+* Data Store: seedData
+*******************************************
+*/
+const appData = window.SeedData.records;
+console.log("appData => ", appData);
+
+
+/**
+*******************************************
+* App Components
+*******************************************
+*/
+
+//container
+class Page extends React.Component {
   state = {};
   componentDidMount() {
     this.setState({});
   }
   render() {
     return (
-      <div className='ui'>Parent</div>
+      <div className='ui'>Page</div>
     );
   }
 }
@@ -19,6 +35,6 @@ class ChildComponent extends React.Component {
 }
 
 ReactDOM.render(
-  <ParentComponent />,
+  <Page />,
   document.getElementById('content')
 );

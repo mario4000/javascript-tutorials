@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "author": "chrisVillanueva",
   "scripts": {
-    "go": "open http://localhost:3000; npm run server",
+    "go": "open http://localhost:3005; npm run server",
     "e2e": "nightwatch",
     "test": "./node_modules/.bin/concurrently -k 'npm run server' 'npm run e2e'",
     "start": "npm run server",
-    "server": "live-server public --host=localhost --port=3000 --middleware=./disable-browser-cache.js"
+    "server": "live-server public --host=localhost --port=3005 --middleware=./disable-browser-cache.js"
   },
   "private": true,
   "devDependencies": {
