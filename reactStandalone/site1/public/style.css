@@ -9,6 +9,12 @@
   margin-bottom: 2em;
 }
 
-i.icon {
-  margin: 0;
+.mouse-watcher {
+  border: 2px solid #eee;
+  width: 100%;
+  min-height: 10rem;
+}
+.mouse-watcher:hover {
+  background-color: #585858;
+  color: #fff;
 }

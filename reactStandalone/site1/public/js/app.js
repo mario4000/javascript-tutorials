@@ -21,18 +21,35 @@ class Page extends React.Component {
   }
   render() {
     return (
-      <div className='ui'>Page</div>
+      <div>
+        <div className='ui'>Page for Site 1</div>
+        <MouseWatcher />
+      </div>
     );
   }
 }
 
-class ChildComponent extends React.Component {
+class MouseWatcher extends React.Component {
+  state =  { x: 0, y: 0 };
+
+  handleMouseMove = (event) => {
+    this.setState({
+      x: event.clientX,
+      y: event.clientY
+    })
+  }
+
   render() {
+    const { x, y } = this.state
     return (
-      <div className=''>Child</div>
-    );
+      <div className="mouse-watcher"
+           onMouseMove={this.handleMouseMove}>
+           <h1>The mouse position is (x: {x}, y: {y})</h1>
+      </div>
+    )
   }
 }
+
 
 ReactDOM.render(
   <Page />,
